@@ -1,0 +1,50 @@
+title = "Gitleaks Config"
+
+[source]
+name = "Flash Flood Early Warning System"
+url = "https://github.com/user/flood-warning-api"
+version = "1.0"
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api[_-]?key|access[_-]?key)['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9\-._~+/]+=*['\"]?'''
+tags = ["key", "API"]
+entropy = 4.5
+
+[[rules]]
+id = "aws-access-key"
+description = "AWS Access Key"
+regex = '''(?i)aws[_.]?(access[_.]?)?key[_.]?id['\"]?\s*[:=]\s*['\"]?[A-Z0-9]{20}['\"]?'''
+tags = ["key", "AWS"]
+entropy = 4.0
+
+[[rules]]
+id = "private-key"
+description = "Private Key"
+regex = '''-----BEGIN\s+(RSA|DSA|EC|OPENSSH|PGP)\s+PRIVATE\s+KEY-----'''
+tags = ["key", "private"]
+
+[[rules]]
+id = "database-url"
+description = "Database Connection String"
+regex = '''(?i)(mongodb|postgresql|mysql|mariadb)[+]?[a-z]*://[^:]+:[^@]+@[^\s]+'''
+tags = ["database", "url"]
+
+[[rules]]
+id = "slack-token"
+description = "Slack Token"
+regex = '''xox[baprs]-[0-9]{10,13}-[0-9]{10,13}[a-zA-Z0-9-]*'''
+tags = ["token", "slack"]
+
+[[rules]]
+id = "github-token"
+description = "GitHub Token"
+regex = '''ghp_[0-9a-zA-Z]{36}'''
+tags = ["token", "github"]
+
+[[rules]]
+id = "jwt-token"
+description = "JWT Token"
+regex = '''eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}'''
+tags = ["token", "jwt"]

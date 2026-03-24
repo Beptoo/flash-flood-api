@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  flash-flood-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flash-flood-api
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    restart: unless-stopped
+    networks:
+      - flood-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  flood-network:
+    driver: bridge
