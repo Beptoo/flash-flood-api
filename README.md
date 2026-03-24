@@ -112,19 +112,3 @@ Job:
 - CI: run pytest
 - CS: run gitleaks scan
 
-## Commit Message
-Pakai Conventional Commits:
-- feat: untuk fitur baru
-- fix: untuk perbaikan bug
-- docs: untuk perubahan dokumentasi
-- test: untuk perubahan test
-- chore: untuk maintenance
-
-Contoh:
-
-```bash
-git commit -m "feat(api): add sensors CRUD endpoints"
-```
-
-## Catatan
-README ini sengaja dibuat singkat dan fokus ke kebutuhan tugas individu.
