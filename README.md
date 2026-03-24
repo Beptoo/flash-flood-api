@@ -1,3 +1,4 @@
+[![Flash Flood API Pipeline](https://github.com/Beptoo/flash-flood-api/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Beptoo/flash-flood-api/actions/workflows/pipeline.yml)
 # 🌊 Flash Flood Early Warning System API
 
 RESTful API untuk sistem peringatan dini banjir bandang (Flash Flood) yang mengelola data sensor ketinggian air secara real-time dengan integrasi penuh Docker, GitHub Actions, dan monitoring otomatis.
