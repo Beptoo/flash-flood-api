@@ -1,3 +1,4 @@
+[![Flash Flood API Pipeline](https://github.com/Beptoo/flash-flood-api/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Beptoo/flash-flood-api/actions/workflows/pipeline.yml)
 # Flash Flood Early Warning System API
 
 Project tugas individu untuk membuat RESTful API sederhana pakai Flask, dilengkapi Docker dan GitHub Actions.
